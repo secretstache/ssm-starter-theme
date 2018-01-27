@@ -8,7 +8,7 @@ define( 'FIELD_LIBRARY', 'ACF' ); // Options: ACF || Carbon
 // Field Library setup
 if ( FIELD_LIBRARY == 'ACF' && class_exists('ACF') ) {
     require SSMPB_DIR . 'acf/boot.php';
-} elseif ( FIELD_LIBRARY == 'Carbon' ) {
+} elseif ( FIELD_LIBRARY == 'Carbon' && class_exists('Carbon_Fields') ) {
     \Carbon_Fields\Carbon_Fields::boot();
     require SSMPB_DIR . 'carbon/boot.php';
 }
