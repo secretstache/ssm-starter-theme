@@ -1,0 +1,29 @@
+section.hero-unit {
+  @include responsive-padding("vert", $base-padding);
+  position: relative;
+  overflow: hidden;
+}
+
+@include breakpoint(medium) {
+  section.hero-unit.full-height,
+  section.hero-unit.fixed-height {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-height: rem-calc(800);
+    padding: 0;
+  }
+
+  body.admin-bar section.hero-unit.full-height {
+    height: calc(100vh - 132px);
+  }
+
+  .hero-unit.full-height {
+    height: calc(100vh - 100px);
+  }
+}
+
+.hero-unit .grid-x {
+  position: relative;
+  z-index: 10;
+}

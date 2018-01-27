@@ -1,0 +1,50 @@
+.site-header {
+  @include responsive-padding("vert", $base-margin);
+  .row {
+    width: 100%;
+  }
+  p.site-title {
+    margin-bottom: 0;
+  }
+  .brand {
+    @include breakpoint(small only) {
+      max-width: rem-calc(100);
+    }
+  }
+}
+
+.dropdown.menu.medium-horizontal > li.is-dropdown-submenu-parent > a:after {
+  display: none;
+}
+
+.hamburger {
+  display: block;
+  position: relative;
+  width: rem-calc(17);
+  height: rem-calc(10);
+  border: none;
+  background: none;
+  outline: none;
+  position: relative;
+  top: 0;
+  cursor: pointer;
+}
+
+.hamburger-line {
+  display: block;
+  background: $primary-color;
+  width: 100%;
+  height: rem-calc(2);
+  position: absolute;
+  left: 0;
+
+  &1 {
+    top: 0;
+  }
+  &2 {
+    top: 50%;
+  }
+  &3 {
+    top: 100%;
+  }
+}

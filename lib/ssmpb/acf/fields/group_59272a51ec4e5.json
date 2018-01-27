@@ -1,0 +1,42 @@
+{
+    "key": "group_59272a51ec4e5",
+    "title": "Inline Scripts",
+    "fields": [
+        {
+            "key": "field_59272a51ef7cf",
+            "label": "JS Editor",
+            "name": "page_inline_scripts",
+            "type": "acf_code_field",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "mode": "javascript",
+            "theme": "monokai"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "!=",
+                "value": "testimonial"
+            }
+        ]
+    ],
+    "menu_order": 5,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1495741238
+}

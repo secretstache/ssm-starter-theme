@@ -1,0 +1,16 @@
+.component.image {
+  background-position: center right !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+:not(.has-one-column).row.collapse .column .component.image {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  z-index: 0;
+}

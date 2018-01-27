@@ -1,0 +1,17 @@
+section.block-grid {
+  .cell {
+    @include responsive-margin("bottom", $base-margin/4);
+    @include responsive-margin("top", $base-margin/3);
+  }
+
+  header.section-header {
+    @include responsive-margin("bottom", $base-margin/4);
+  }
+
+  .component {
+    @include responsive-margin("top", $base-margin/4);
+    &.stack-order-1 {
+      margin-top: 0;
+    }
+  }
+}

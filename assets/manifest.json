@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "main.js": {
+      "files": ["scripts/main.js"],
+      "main": true
+    },
+    "main.css": {
+      "files": ["styles/main.scss"],
+      "main": true
+    },
+    "customizer.js": {
+      "files": ["scripts/customizer.js"]
+    },
+    "jquery.js": {
+      "bower": ["jquery"]
+    },
+    "fonts": {
+      "files": [
+        "fonts/**/*",
+        "../bower_components/**/*.{eot,otf,svg,ttc,ttf,woff,woff2}"
+      ]
+    }
+  },
+  "config": {
+    "devUrl": "http://ssmframework.local"
+  }
+}

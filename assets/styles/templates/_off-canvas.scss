@@ -1,0 +1,74 @@
+.off-canvas {
+  position: fixed;
+  height: 100%;
+  width: $panel-width;
+  background: $panel-background;
+  padding: $panel-content-padding;
+  z-index: $panel-z-index;
+  overflow-y: auto;
+  transition: all $panel-transition-easing $panel-transition-timing;
+  box-shadow: none;
+  left: -100%;
+
+  svg g {
+    fill: $white;
+  }
+
+  &.is-active {
+    box-shadow: $panel-shadow;
+    left: 0;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  ul.menu {
+    margin-bottom: 0;
+  }
+
+  ul.menu > li > a {
+    color: $panel-links-color;
+  }
+
+  ul.menu a:hover {
+    background: $primary-color;
+  }
+
+  ul.menu li.active a {
+    background: transparent;
+    &:hover {
+      background: $primary-color;
+    }
+  }
+
+  ul.menu ul.menu {
+    display: block;
+  }
+}
+
+.off-canvas-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: $panel-close-button-bg;
+  border-radius: 0;
+  fill: white;
+  color: $black;
+  border: none;
+}
+
+.off-canvas.right {
+  left: initial;
+  right: -100%;
+
+  &.is-active {
+    left: initial;
+    right: 0;
+  }
+
+  .off-canvas-close {
+    left: 0;
+    right: initial;
+  }
+}
