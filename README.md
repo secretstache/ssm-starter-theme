@@ -1,3 +1,7 @@
+## Info
+
+This is a fork of the amazing [Sage Starter Theme](https://github.com/roots/sage) that comes preset with Foundation 6 and our homegrown layout builder SSMPB. It creates an abstraction layer on top of custom field libraries (ACF & Carbon Fields) in an attempt to use either interchangeably depending on a project's requirements. The jury is out as to whether or not we will keep this, but for now, it's a goal.
+
 ## Requirements
 
 | Prerequisite    | How to check | How to install                                  |

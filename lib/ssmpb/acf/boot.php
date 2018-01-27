@@ -1,15 +1,5 @@
 <?php
 
-add_action('admin_enqueue_scripts', 'acf_admin_css');
-/**
- * ACF Admin CSS
- * @since 0.5
- */
-function acf_admin_css() {
-	wp_register_style('acf-styles', SSMPB_DIR_URI . 'acf/styles/acf.css', '', SSMPB_VERSION);
-	wp_enqueue_style('acf-styles');
-}
-
 add_filter('acf/settings/save_json', 'json_save_point');
 /**
  * Updates where acf json files are saved to
@@ -40,8 +30,18 @@ function json_load_point($paths) {
 
 }
 
+add_action('admin_enqueue_scripts', 'acf_admin_css');
+/**
+ * ACF Admin CSS
+ * @since 0.5
+ */
+function acf_admin_css() {
+	wp_register_style('acf-styles', SSMPB_DIR_URI . 'acf/styles/acf.css', '', SSMPB_VERSION);
+	wp_enqueue_style('acf-styles');
+}
+
 // Add Brand Settings Page
-// TODO: put inside init action
+// TODO: wrap inside init action
 acf_add_options_sub_page(array(
     'page_title' => 'Brand Settings',
     'menu_title' => 'Brand Settings',
@@ -49,7 +49,7 @@ acf_add_options_sub_page(array(
 ));
 
 // Add Documentation Page
-// TODO: put inside init action
+// TODO: wrap inside init action
 acf_add_options_sub_page(array(
     'page_title' => 'Documentation',
     'menu_title' => 'Documentation',
