@@ -1,0 +1,9 @@
+.cell {
+  margin-top: $component-margin;
+  &:first-of-type {
+    margin-top: 0;
+  }
+  @include breakpoint(medium) {
+    margin-top: 0;
+  }
+}
