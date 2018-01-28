@@ -52,3 +52,29 @@
   font-style: normal;
   margin: 5px;
 }
+
+.post-php a.button-primary[data-event="add-row"],
+.post-php a.button-primary[data-event="add-row"].disabled,
+.post-new-php a.button-primary[data-event="add-row"],
+.post-new-php a.button-primary[data-event="add-row"].disabled {
+  background: none !important;
+  border: none !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  color: #0085ba !important;
+  text-decoration: underline;
+}
+
+.post-php a.button-primary[data-event="add-row"].disabled,
+.post-new-php a.button-primary[data-event="add-row"].disabled {
+  opacity: 0.5;
+}
+
+.post-php a.button-primary[data-event="add-row"]::after,
+.post-new-php a.button-primary[data-event="add-row"]::after {
+  content: " +";
+}
+
+.acf-repeater .acf-table > tbody > tr > td.acf-field-number {
+  vertical-align: middle;
+}

@@ -7,13 +7,12 @@
             "label": "Components",
             "name": "components",
             "type": "flexible_content",
-            "value": null,
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
-                "class": "",
+                "class": "hide-label",
                 "id": ""
             },
             "layouts": {
@@ -28,7 +27,6 @@
                             "label": "Header",
                             "name": "header",
                             "type": "clone",
-                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -60,7 +58,6 @@
                             "label": "Editor",
                             "name": "editor",
                             "type": "clone",
-                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -92,7 +89,6 @@
                             "label": "Image",
                             "name": "image",
                             "type": "clone",
-                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -124,7 +120,6 @@
                             "label": "Video",
                             "name": "video",
                             "type": "clone",
-                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -156,7 +151,6 @@
                             "label": "Button(s)",
                             "name": "buttons",
                             "type": "clone",
-                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -188,7 +182,6 @@
                             "label": "Form",
                             "name": "form",
                             "type": "clone",
-                            "value": null,
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -232,5 +225,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1507424039
+    "modified": 1517121745
 }

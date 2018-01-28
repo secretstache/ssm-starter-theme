@@ -1,23 +1,5 @@
 <?php
 
-function the_default_header() {
-
-	$html = '<section class="hero-unit bg-grey-light auto">';
-		$html .= '<div class="grid-container">';
-			$html .= '<div class="grid-x grid-margin-x align-center">';
-				$html .= '<div class="cell">';
-					$html .= '<header class="component stack-order-1">';
-						$html .= '<h1 class="headline">' . get_the_title() . '</h1>';
-					$html .= '</header>';
-				$html .= '</div>';
-			$html .= '</div>';
-		$html .= '</div>';
-	$html .= '</section>';
-
-	echo $html;
-
-}
-
 function the_columns( $context = 'section' ) {
 
 	if ( FIELD_LIBRARY == 'ACF' ) {

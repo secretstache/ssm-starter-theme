@@ -1,6 +1,6 @@
 {
     "key": "group_58eff558158a0",
-    "title": "Tab: Style - Background Options",
+    "title": "Style - Background Options",
     "fields": [
         {
             "key": "field_58eff63f04dd6",
@@ -18,7 +18,8 @@
             "choices": {
                 "None": "None",
                 "Color": "Color",
-                "Image": "Image"
+                "Image": "Image",
+                "Video": "Video"
             },
             "allow_null": 0,
             "other_choice": 0,
@@ -89,6 +90,33 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_5a6d7871add67",
+            "label": "Background Video",
+            "name": "background_video",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58eff63f04dd6",
+                        "operator": "==",
+                        "value": "Video"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
         }
     ],
     "location": [
@@ -108,5 +136,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1507408400
+    "modified": 1517123742
 }

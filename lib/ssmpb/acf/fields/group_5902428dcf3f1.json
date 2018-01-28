@@ -38,27 +38,6 @@
             "button_label": "Add Column",
             "sub_fields": [
                 {
-                    "key": "field_5a63fd539e2fa",
-                    "label": "Column Width",
-                    "name": "column_width",
-                    "type": "number",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "min": 3,
-                    "max": 12,
-                    "step": ""
-                },
-                {
                     "key": "field_5a63c3854c193",
                     "label": "Component List",
                     "name": "component_list",
@@ -192,13 +171,6 @@
                 "operator": "==",
                 "value": "page"
             }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "post"
-            }
         ]
     ],
     "menu_order": 0,
@@ -209,5 +181,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1517021663
+    "modified": 1517121790
 }

@@ -1,13 +1,8 @@
 {
     "key": "group_588906a3b200b",
-    "title": "Tab: Admin - Default",
+    "title": "Admin - Default",
     "fields": [
         {
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
             "key": "field_588906ad7a0fb",
             "label": "Section Label",
             "name": "section_label",
@@ -19,14 +14,14 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
-            "default_value": 1,
-            "message": "",
-            "ui": 1,
-            "ui_on_text": "Active",
-            "ui_off_text": "Inactive",
             "key": "field_5892c46be3cb0",
             "label": "Status",
             "name": "status",
@@ -38,7 +33,12 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "default_value": 1,
+            "message": "",
+            "ui": 1,
+            "ui_on_text": "Active",
+            "ui_off_text": "Inactive"
         }
     ],
     "location": [
@@ -58,5 +58,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1486092181
+    "modified": 1517116801
 }

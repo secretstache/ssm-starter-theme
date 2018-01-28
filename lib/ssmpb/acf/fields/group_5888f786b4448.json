@@ -1,6 +1,6 @@
 {
     "key": "group_5888f786b4448",
-    "title": "Component List - Full Width",
+    "title": "Component List - Sections",
     "fields": [
         {
             "key": "field_5888f7919cea7",
@@ -232,11 +232,43 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "5a6d5ec4cbea1": {
+                    "key": "5a6d5ec4cbea1",
+                    "name": "html_editor",
+                    "label": "HTML Editor",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5a6d5ecfcbea2",
+                            "label": "HTML Editor",
+                            "name": "html_editor",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_58ae828c9a0db"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Component",
             "min": "",
-            "max": ""
+            "max": "",
+            "mc_acf_ft_true_false": 1
         }
     ],
     "location": [
@@ -256,5 +288,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1516511883
+    "modified": 1517118125
 }

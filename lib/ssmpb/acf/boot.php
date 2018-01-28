@@ -87,3 +87,22 @@ function section_title($title, $field, $layout, $i) {
 	return $label;
 
 }
+
+add_action('acf/input/admin_head', 'acf_flexible_content_collapse');
+/**
+ * Collapse Flexible Content Fields by default
+ * @since 0.5
+ */
+function acf_flexible_content_collapse() {
+	?>
+	<style id="acf-flexible-content-collapse">.acf-flexible-content .acf-fields { display: none; }</style>
+	<script type="text/javascript">
+			jQuery(function($) {
+					$('.acf-flexible-content .layout').addClass('-collapsed');
+					$('#acf-flexible-content-collapse').detach();
+			});
+	</script>
+	<?php
+}
+
+

@@ -25,8 +25,8 @@
         [
             {
                 "param": "post_type",
-                "operator": "!=",
-                "value": "testimonial"
+                "operator": "==",
+                "value": "page"
             }
         ]
     ],
@@ -38,5 +38,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1495741238
+    "modified": 1517117716
 }

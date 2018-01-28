@@ -1,3 +1,8 @@
 body.is-front #postimagediv {
   display: none;
 }
+
+#edit-slug-box {
+  color: #444;
+  padding: 0;
+}
