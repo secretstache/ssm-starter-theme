@@ -3,7 +3,7 @@
 if ( !post_password_required() ) {
 
 	$style = get_inline_styles();
-	$cols = get_field('hero_unit_columns');
+	$cols = ssm_get_field('hero_unit_columns');
 
 	if ( $cols[0]['components'] != NULL ) {
 

@@ -44,7 +44,7 @@ function the_columns( $context = 'section' ) {
 							$width = 12 / $count;
 						}
 					} else {
-						$width = '10';
+						$width = '12';
 					}
 
 					echo '<div class="cell small-11 medium-' . $width . ' i-' . get_row_index() . '">';	
