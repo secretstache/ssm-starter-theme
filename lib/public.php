@@ -166,3 +166,14 @@ function ssm_custom_footer_scripts() {
   }
 
 }
+/**
+ * Set Favicon
+ *
+ */
+add_action('wp_head', 'set_favicon');
+
+function set_favicon() {
+	if ( $favicon = ssm_get_field('favicon', 'options') ) {
+		echo '<link rel="shortcut icon" href="' . $favicon['url'] . '" />';
+	}
+}
