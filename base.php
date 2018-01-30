@@ -17,12 +17,10 @@ use Roots\Sage\Wrapper;
 do_action('get_header');
 get_template_part('templates/header');
 ?>
-    <div class="wrap" role="document">
-      <main class="main">
-        <?php include Wrapper\template_path();?>
-      </main><!-- /.main -->
-    </div><!-- /.wrap -->
-    <?php
+	<main class="content">
+		<?php include Wrapper\template_path();?>
+	</main><!-- /.main -->
+<?php
 do_action('get_footer');
 get_template_part('templates/footer');
 wp_footer();
