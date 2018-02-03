@@ -4,9 +4,15 @@ function the_columns( $context = 'section' ) {
 
 	if ( FIELD_LIBRARY == 'ACF' ) {
 		
-		$cols = ssm_get_field( $context . '_columns' );
+		$cols = get_sub_field( $context . '_columns' );
 		$count = count( $cols );
-		$alignment = ssm_get_field('column_alignment');
+		$override_col_widths = get_sub_field( 'override_column_widths' );
+		
+		$alignment = '';
+
+		if ( get_sub_field('column_alignment') != 'top' ) { 
+			$alignment = ' align-' . get_sub_field('column_alignment');
+		}
 
 		$tpl_args['column_count'] = $count;
 		$tpl_args['context'] = $context;
@@ -14,19 +20,15 @@ function the_columns( $context = 'section' ) {
 		if ( have_rows( $context . '_columns' ) ) {
 			
 			 echo '<div class="grid-container">';
-				echo '<div class="grid-x grid-margin-x align-center align-' . $alignment . ' has-' . $count . '-cols">';
+				echo '<div class="grid-x grid-margin-x align-center' . $alignment . ' has-' . $count . '-cols">';
 				while ( have_rows( $context . '_columns' ) ) {
 					the_row();
 					$col_width = get_sub_field( 'column_width' );
 					
-					if ( $count > 1 ) {
-						if ( $col_width ) {
-							$width = $col_width;
-						} else {
-							$width = 12 / $count;
-						}
+					if ( $override_col_widths == true && $col_width != null ) {
+						$width = $col_width;
 					} else {
-						$width = '12';
+						$width = 12 / $count;
 					}
 
 					echo '<div class="cell small-11 medium-' . $width . ' i-' . get_row_index() . '">';	
