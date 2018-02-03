@@ -13,7 +13,8 @@ add_action( 'admin_init', 'remove_dashboard_meta' );
  *  Remove default dashboards
  */
 function remove_dashboard_meta() {
-  remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
+	remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );
+	remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
   remove_meta_box( 'dashboard_plugins', 'dashboard', 'normal' );
   remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
   remove_meta_box( 'dashboard_secondary', 'dashboard', 'normal' );
@@ -23,17 +24,25 @@ function remove_dashboard_meta() {
   remove_meta_box( 'dashboard_activity', 'dashboard', 'normal');
   remove_meta_box( 'rg_forms_dashboard', 'dashboard', 'normal' );
   remove_meta_box( 'wpe_dify_news_feed', 'dashboard', 'normal' );
-  remove_meta_box( 'wpseo-dashboard-overview', 'dashboard', 'normal' );
+	remove_meta_box( 'wpseo-dashboard-overview', 'dashboard', 'normal' );
+	remove_meta_box( 'ssm_main_dashboard_widget', 'dashboard', 'normal' );
 }
 
 // Remove default welcome panel
 remove_action( 'welcome_panel', 'wp_welcome_panel' );
 
+add_action( 'welcome_panel', 'ssm_welcome_panel' );
+/**
+ * Create Custom Welcome Panel
+ */
+function ssm_welcome_panel() {
+	get_template_part('templates/welcome-panel');
+}
+
 
 add_filter( 'wpseo_metabox_prio', 'ssm_filter_yoast_seo_metabox' );
 /**
  * Filter Yoast SEO Metabox Priority
- * TODO: Move to Framework
  */
 function ssm_filter_yoast_seo_metabox() {
   return 'low';
@@ -41,7 +50,7 @@ function ssm_filter_yoast_seo_metabox() {
 
 add_action( 'admin_menu', 'ssm_admin_menu' );
 /**
- *  Add LIB menu item
+ *  Add SSM menu item
  */
 function ssm_admin_menu() {
   add_menu_page(

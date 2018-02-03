@@ -6,3 +6,15 @@ body.is-front #postimagediv {
   color: #444;
   padding: 0;
 }
+
+#welcome-panel {
+  padding: 20px;
+}
+
+.welcome-panel-close {
+  display: none;
+}
+
+#dashboard-widgets-wrap {
+  display: none;
+}
