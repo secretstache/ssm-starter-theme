@@ -23,6 +23,7 @@ function the_columns( $context = 'section' ) {
 				echo '<div class="grid-x grid-margin-x align-center' . $alignment . ' has-' . $count . '-cols">';
 				while ( have_rows( $context . '_columns' ) ) {
 					the_row();
+					
 					$col_width = get_sub_field( 'column_width' );
 					
 					if ( $override_col_widths == true && $col_width != null ) {

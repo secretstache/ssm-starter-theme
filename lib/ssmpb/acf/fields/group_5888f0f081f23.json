@@ -601,7 +601,7 @@
                                     "label": "Column Width",
                                     "name": "column_width",
                                     "type": "range",
-                                    "instructions": "",
+                                    "instructions": "Layouts are built on a 12 point grid. The number you choose determines how many points each column will span. For example, if you choose 6 points, this column will span 50% of it's container.",
                                     "required": 0,
                                     "conditional_logic": [
                                         [
@@ -617,7 +617,7 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "default_value": "",
+                                    "default_value": 6,
                                     "min": 1,
                                     "max": 12,
                                     "step": "",
@@ -809,5 +809,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1517688097
+    "modified": 1517773167
 }

@@ -106,3 +106,26 @@ function acf_flexible_content_collapse() {
 }
 
 
+// add_filter('acf/load_field/name=column_width', 'load_default_width');
+// /**
+//  * Collapse Flexible Content Fields by default
+//  * @since 1.0
+//  */
+// function load_default_width( $field ) {
+// 	// pprint_r( $field );
+
+// 	$cols = get_sub_field('section_columns');
+
+// 	if ( count( $cols ) == 1 ) {
+// 		$field['default_value'] = '12';
+// 	} elseif ( count( $cols ) == 2 ) {
+// 		$field['default_value'] = '6';
+// 	} elseif ( count( $cols ) == 3 ) {
+// 		$field['default_value'] = '4';
+// 	} elseif ( count( $cols ) == 4 ) {
+// 		$field['default_value'] = '3';
+// 	}
+
+// 	return $field;
+
+// }
