@@ -557,6 +557,30 @@
                             "endpoint": 0
                         },
                         {
+                            "key": "field_5a820738389ee",
+                            "label": "Columns Width",
+                            "name": "columns_width",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "8": "8",
+                                "10": "10"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "",
+                            "layout": "horizontal",
+                            "return_format": "value"
+                        },
+                        {
                             "key": "field_5888f213afc74",
                             "label": "Header",
                             "name": "header",
@@ -596,34 +620,6 @@
                             "layout": "block",
                             "button_label": "Add Column",
                             "sub_fields": [
-                                {
-                                    "key": "field_5a760efd5a865",
-                                    "label": "Column Width",
-                                    "name": "column_width",
-                                    "type": "range",
-                                    "instructions": "Layouts are built on a 12 point grid. The number you choose determines how many points each column will span. For example, if you choose 6 points, this column will span 50% of it's container.",
-                                    "required": 0,
-                                    "conditional_logic": [
-                                        [
-                                            {
-                                                "field": "field_5a760eb15a864",
-                                                "operator": "==",
-                                                "value": "1"
-                                            }
-                                        ]
-                                    ],
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": 6,
-                                    "min": 1,
-                                    "max": 12,
-                                    "step": "",
-                                    "prepend": "",
-                                    "append": ""
-                                },
                                 {
                                     "key": "field_5888fb83617a8",
                                     "label": "Components",
@@ -683,25 +679,6 @@
                             "layout": "block",
                             "prefix_label": 0,
                             "prefix_name": 0
-                        },
-                        {
-                            "key": "field_5a760eb15a864",
-                            "label": "Override Column Widths",
-                            "name": "override_column_widths",
-                            "type": "true_false",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "hide-label",
-                                "id": ""
-                            },
-                            "message": "Override Default Column Widths",
-                            "default_value": 0,
-                            "ui": 0,
-                            "ui_on_text": "",
-                            "ui_off_text": ""
                         },
                         {
                             "key": "field_58898a6ed5e59",
@@ -809,5 +786,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1517773167
+    "modified": 1518471081
 }
