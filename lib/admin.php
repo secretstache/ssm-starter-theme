@@ -94,3 +94,36 @@ function is_front_admin_body_class( $classes ) {
   }
 
 }
+
+add_action( 'wp_ajax_get_width_values', 'get_width_values' ); 
+add_action( 'wp_ajax_nopriv_get_width_values', 'get_width_values' );
+
+add_action( 'save_post', 'update_width_post_meta', 10, 3 );
+
+function update_width_post_meta( $post_ID, $post, $update ) {
+
+  if ( isset( $_POST['columns_count'] ) ) {
+  
+    for ( $i = 0; $i < $_POST['columns_count']; $i++ ) { 
+
+      if ( get_post_meta( $_POST['post_ID'], 'columns_width_' . $i ) ) {
+        update_post_meta( $_POST['post_ID'], 'columns_width_' . $i, $_POST['columns_width_' . $i] );
+      } else {
+        add_post_meta( $_POST['post_ID'], 'columns_width_' . $i, $_POST['columns_width_' . $i] );       
+      }
+
+    }
+  }
+}
+
+function get_width_values() {
+
+  $response = array();
+
+  for ( $i = 0; $i < $_POST['columns_count']; $i++ ) { 
+    array_push( $response, get_post_meta( $_POST['page_id'], 'columns_width_' . $i, true ) );
+  }
+
+  echo json_encode( $response );
+  wp_die();
+}

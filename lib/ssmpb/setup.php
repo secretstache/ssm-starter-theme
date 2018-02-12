@@ -17,6 +17,7 @@ if ( FIELD_LIBRARY == 'ACF' && class_exists('ACF') ) {
 require SSMPB_DIR . 'helpers.php';
 
 add_action('admin_enqueue_scripts', 'ssmpb_admin_css');
+
 /**
  * SSMPB Admin CSS
  * @since 0.5
@@ -24,4 +25,15 @@ add_action('admin_enqueue_scripts', 'ssmpb_admin_css');
 function ssmpb_admin_css() {
 	wp_register_style('ssmpb-styles', SSMPB_DIR_URI . 'styles/ssmpb.css', '', SSMPB_VERSION);
 	wp_enqueue_style('ssmpb-styles');
+}
+
+add_action('admin_enqueue_scripts', 'ssmpb_admin_js');
+
+/**
+ * SSMPB Admin JS
+ * @since 0.5
+ */
+function ssmpb_admin_js() {
+	wp_enqueue_script( 'columns_width', SSMPB_DIR_URI . 'scripts/columns_width.js' );
+	wp_localize_script( 'columns_width', 'main', array('ajax_url' => admin_url( 'admin-ajax.php' )));
 }
