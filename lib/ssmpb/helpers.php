@@ -3,14 +3,22 @@
 function the_columns( $context = 'section' ) {
 
 	if ( FIELD_LIBRARY == 'ACF' ) {
-		
+    
+    global $post;
+    
+    $page_id = $post->ID;		
+
 		$cols = get_sub_field( $context . '_columns' );
 		$count = count( $cols );
-		$columns_width = get_sub_field( 'columns_width' );
-		$width_array = explode('_', $columns_width);
-		$pluck = 0;
+    
+    // first Content Block - columns_width_0, second Content Block - columns_width_1 ...
+		$columns_width = get_post_meta( $page_id, 'columns_width_0', true );
 
-		pprint_r( $columns_width );
+		// $width_array = explode('_', $columns_width);
+		
+    $pluck = 0;
+
+    pprint_r( $columns_width ); 
 		
 		$alignment = '';
 
