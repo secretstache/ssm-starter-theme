@@ -1,6 +1,6 @@
 <?php
 
-function the_columns( $context = 'section' ) {
+function the_columns( $context = 'section', $index = NULL ) {
 
 	if ( FIELD_LIBRARY == 'ACF' ) {
     
@@ -12,13 +12,13 @@ function the_columns( $context = 'section' ) {
 		$count = count( $cols );
     
     // first Content Block - columns_width_0, second Content Block - columns_width_1 ...
-		$columns_width = get_post_meta( $page_id, 'columns_width_0', true );
+		$columns_width = get_post_meta( $page_id, 'columns_width_' . $index, true );
 
-		// $width_array = explode('_', $columns_width);
+		$width_array = explode('_', $columns_width);
 		
     $pluck = 0;
 
-    pprint_r( $columns_width ); 
+  	pprint_r( $columns_width ); 
 		
 		$alignment = '';
 

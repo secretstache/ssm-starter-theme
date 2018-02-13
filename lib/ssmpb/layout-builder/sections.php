@@ -4,13 +4,14 @@ if ( ! post_password_required() ) {
 
   if ( have_rows('sections') ) {
 
-		$s_i = 1;
     global $tpl_args;
 
     while ( have_rows('sections') ) {
 			the_row();
 
-			$tpl_args['section_position'] = $s_i;
+			$index = get_row_index() - 1;
+
+			$tpl_args['section_index'] = $index;
 			$layout = get_row_layout();
 
 			switch( $layout ) {
@@ -28,8 +29,6 @@ if ( ! post_password_required() ) {
 				break;
 
 			}
-
-			$s_i++;
 			
 		}
 	
