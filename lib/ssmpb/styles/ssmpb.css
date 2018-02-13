@@ -18,3 +18,24 @@ body.is-front #postimagediv {
 #dashboard-widgets-wrap {
   display: none;
 }
+
+.acf-field.columns-width .acf-radio-list {
+  margin-left: 20px;
+}
+
+.acf-field.columns-width .acf-radio-list li {
+  margin-right: 35px;
+}
+
+.acf-field.columns-width .acf-radio-list input {
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+img.thumbs {
+  border: 1px solid #ddd;
+  max-width: 75px;
+  height: auto;
+}

@@ -557,30 +557,6 @@
                             "endpoint": 0
                         },
                         {
-                            "key": "field_5a820738389ee",
-                            "label": "Columns Width",
-                            "name": "columns_width",
-                            "type": "radio",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "8": "8",
-                                "10": "10"
-                            },
-                            "allow_null": 0,
-                            "other_choice": 0,
-                            "save_other_choice": 0,
-                            "default_value": "",
-                            "layout": "horizontal",
-                            "return_format": "value"
-                        },
-                        {
                             "key": "field_5888f213afc74",
                             "label": "Header",
                             "name": "header",
@@ -679,6 +655,30 @@
                             "layout": "block",
                             "prefix_label": 0,
                             "prefix_name": 0
+                        },
+                        {
+                            "key": "field_5a820738389ee",
+                            "label": "Columns Width",
+                            "name": "columns_width",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "columns-width",
+                                "id": ""
+                            },
+                            "choices": {
+                                "8": "8",
+                                "10": "10"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "",
+                            "layout": "horizontal",
+                            "return_format": "value"
                         },
                         {
                             "key": "field_58898a6ed5e59",
@@ -786,5 +786,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1518471081
+    "modified": 1518480999
 }

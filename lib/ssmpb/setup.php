@@ -35,5 +35,8 @@ add_action('admin_enqueue_scripts', 'ssmpb_admin_js');
  */
 function ssmpb_admin_js() {
 	wp_enqueue_script( 'columns_width', SSMPB_DIR_URI . 'scripts/columns_width.js' );
-	wp_localize_script( 'columns_width', 'main', array('ajax_url' => admin_url( 'admin-ajax.php' )));
+	wp_localize_script( 'columns_width', 'main', array(
+		'ajax_url' => admin_url( 'admin-ajax.php' ), 
+		'stylesheet_directory' => get_stylesheet_directory_uri()
+	));
 }

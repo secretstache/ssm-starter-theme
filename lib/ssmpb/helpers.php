@@ -6,7 +6,11 @@ function the_columns( $context = 'section' ) {
 		
 		$cols = get_sub_field( $context . '_columns' );
 		$count = count( $cols );
-		$override_col_widths = get_sub_field( 'override_column_widths' );
+		$columns_width = get_sub_field( 'columns_width' );
+		$width_array = explode('_', $columns_width);
+		$pluck = 0;
+
+		pprint_r( $columns_width );
 		
 		$alignment = '';
 
@@ -24,19 +28,21 @@ function the_columns( $context = 'section' ) {
 				while ( have_rows( $context . '_columns' ) ) {
 					the_row();
 					
-					$col_width = get_sub_field( 'column_width' );
-					
-					if ( $override_col_widths == true && $col_width != null ) {
-						$width = $col_width;
+					if ( $columns_width != null ) {
+						$width = $width_array[$pluck];
 					} else {
 						$width = 12 / $count;
 					}
+
+					$template_args['column_width'] = $width;
 
 					echo '<div class="cell small-11 medium-' . $width . ' i-' . get_row_index() . '">';	
 						
 						the_components( $tpl_args );
 
 					echo '</div>';
+					
+					$pluck++;
 				}
 				echo '</div>';
 			echo '</div>';
