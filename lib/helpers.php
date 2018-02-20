@@ -95,14 +95,14 @@ function get_menu_args( $context = 'primary' ) {
 
     if ( $context == 'offcanvas') {
         $args = array( 
-            'menu' => 'primary_navigation', 
+            'theme_location' => 'primary_navigation', 
             'container' => FALSE, 
             'items_wrap' => '<ul class="vertical menu">%3$s</ul>', 
             'walker' => new Foundation_Nav_Walker 
         );
     } elseif ( $context == 'primary' ) {
         $args = array( 
-            'menu' => 'primary_navigation', 
+            'theme_location' => 'primary_navigation', 
             'container' => FALSE, 
             'items_wrap' => '<ul class="horizontal menu show-for-medium dropdown" data-dropdown-menu>%3$s</ul>', 
             'walker' => new Foundation_Nav_Walker 

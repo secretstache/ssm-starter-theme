@@ -1,66 +1,83 @@
 <?php
 
-function the_columns( $context = 'section', $index = NULL ) {
+function the_columns($context = 'section', $cols_cb_i = null)
+{
 
-	if ( FIELD_LIBRARY == 'ACF' ) {
-    
-    global $post;
-    
-    $page_id = $post->ID;		
+    if (FIELD_LIBRARY == 'ACF') {
 
-		$cols = get_sub_field( $context . '_columns' );
-		$count = count( $cols );
-    
-    // first Content Block - columns_width_0, second Content Block - columns_width_1 ...
-		$columns_width = get_post_meta( $page_id, 'columns_width_' . $index, true );
+        global $post;
 
-		$width_array = explode('_', $columns_width);
-		
-    $pluck = 0;
+        $page_id = $post->ID;
 
-  	pprint_r( $columns_width ); 
-		
-		$alignment = '';
+        $cols = '';
+        $alignment = '';
 
-		if ( get_sub_field('column_alignment') != 'top' ) { 
-			$alignment = ' align-' . get_sub_field('column_alignment');
-		}
+        if ($context == 'hero_unit') {
+						$cols = get_field($context . '_columns');
+						// this seems unecessary ** check how ACF clone is rendering different in Hero Unit
+            $alignment_array = get_field('hero_unit_column_alignment');
+            if ($alignment_array['column_alignment'] != 'top') {
+                $alignment = ' align-' . $alignment_array['column_alignment'];
+						}
 
-		$tpl_args['column_count'] = $count;
-		$tpl_args['context'] = $context;
+        } elseif ($context == 'section') {
+            $cols = get_sub_field($context . '_columns');
+            if (get_sub_field('column_alignment') != 'top') {
+                $alignment = ' align-' . get_sub_field('column_alignment');
+            }
+        }
 
-		if ( have_rows( $context . '_columns' ) ) {
-			
-			 echo '<div class="grid-container">';
-				echo '<div class="grid-x grid-margin-x align-center' . $alignment . ' has-' . $count . '-cols">';
-				while ( have_rows( $context . '_columns' ) ) {
-					the_row();
-					
-					if ( $columns_width != null ) {
-						$width = $width_array[$pluck];
-					} else {
-						$width = 12 / $count;
-					}
+        $count = count($cols);
 
-					$template_args['column_width'] = $width;
+        // first Content Block - columns_width_0, second Content Block - columns_width_1 ...
+        $columns_width = get_post_meta($page_id, 'columns_width_' . $cols_cb_i, true);
 
-					echo '<div class="cell small-11 medium-' . $width . ' i-' . get_row_index() . '">';	
-						
-						the_components( $tpl_args );
+        $width_array = explode('_', $columns_width);
+        $pluck = 0;
 
-					echo '</div>';
-					
-					$pluck++;
-				}
-				echo '</div>';
-			echo '</div>';
-		}
+        $tpl_args['column_count'] = $count;
+        $tpl_args['context'] = $context;
 
-	} elseif ( FIELD_LIBRARY == 'Carbon' ) {
+        if (have_rows($context . '_columns')) {
 
-		// TODO
+            echo '<div class="grid-container">';
+            echo '<div class="main grid-x grid-margin-x align-center' . $alignment . ' has-' . $count . '-cols">';
+            while (have_rows($context . '_columns')) {
+                the_row();
 
-	}
+                if ($context == 'hero_unit') {
+                    $width = 12 / $count;
+                } elseif ($context == 'section') {
+                    if ($columns_width != null) {
+                        $width = $width_array[$pluck];
+                    } else {
+                        $width = 12 / $count;
+                    }
+                }
+
+                $template_args['column_width'] = $width;
+
+                echo '<div class="cell small-11 medium-' . $width . ' i-' . get_row_index() . '">';
+
+                echo '<div class="inner">';
+
+                the_components($tpl_args);
+
+                echo '</div>';
+
+                echo '</div>';
+
+                $pluck++;
+            }
+            echo '</div>';
+            echo '</div>';
+        }
+
+    } elseif (FIELD_LIBRARY == 'Carbon') {
+
+        // TODO
+
+    }
 
 }
 

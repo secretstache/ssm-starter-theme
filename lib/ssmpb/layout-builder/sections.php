@@ -1,37 +1,46 @@
 <?php
 
-if ( ! post_password_required() ) {
+if (!post_password_required()) {
 
-  if ( have_rows('sections') ) {
+    if (have_rows('sections')) {
 
-    global $tpl_args;
+        global $tpl_args;
 
-    while ( have_rows('sections') ) {
-			the_row();
+        $cols_cb_i = 0;
 
-			$index = get_row_index() - 1;
+        while (have_rows('sections')) {
+            the_row();
 
-			$tpl_args['section_index'] = $index;
-			$layout = get_row_layout();
+            $cb_i = get_row_index();
 
-			switch( $layout ) {
+            $tpl_args['cb_i'] = $cb_i;
+            $tpl_args['cols_cb_i'] = $cols_cb_i;
 
-				case 'columns' :
-				hm_get_template_part( SSMPB_DIR . 'layout-builder/sections/columns-section.php', $tpl_args);
-				break;
+            $layout = get_row_layout();
 
-				case 'related_content' : 
-				hm_get_template_part( SSMPB_DIR . 'layout-builder/sections/related-content-section.php', $tpl_args);
-				break;
+            switch ($layout) {
 
-				case 'block_grid' : 
-				hm_get_template_part( SSMPB_DIR . 'layout-builder/sections/block-grid-section.php', $tpl_args);
-				break;
+                case 'columns':
+                    hm_get_template_part(SSMPB_DIR . 'layout-builder/sections/columns-section.php', $tpl_args);
+                    $cols_cb_i++;
+                    break;
 
-			}
-			
-		}
-	
-	}
+                case 'related_content':
+                    hm_get_template_part(SSMPB_DIR . 'layout-builder/sections/related-content-section.php', $tpl_args);
+                    break;
+
+                case 'block_grid':
+                    hm_get_template_part(SSMPB_DIR . 'layout-builder/sections/block-grid-section.php', $tpl_args);
+                    break;
+
+                case 'podcast':
+                    hm_get_template_part(SSMPB_DIR . 'layout-builder/sections/podcast-section.php', $tpl_args);
+                    break;
+
+            }
+
+        }
+
+    }
 
 }
