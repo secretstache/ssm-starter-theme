@@ -60,29 +60,21 @@
                             "prefix_name": 0
                         },
                         {
-                            "key": "field_5a6424046391d",
-                            "label": "Blog Posts To Show",
-                            "name": "blog_posts_to_show",
-                            "type": "relationship",
+                            "key": "field_5a8ba9f1dc07e",
+                            "label": "Message",
+                            "name": "",
+                            "type": "message",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
-                                "class": "",
+                                "class": "hide-label",
                                 "id": ""
                             },
-                            "post_type": [
-                                "post"
-                            ],
-                            "taxonomy": [],
-                            "filters": [
-                                "search"
-                            ],
-                            "elements": "",
-                            "min": "",
-                            "max": "",
-                            "return_format": "id"
+                            "message": "No further input is required.",
+                            "new_lines": "wpautop",
+                            "esc_html": 0
                         },
                         {
                             "key": "field_5a6423ce6391b",
@@ -791,5 +783,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1519101553
+    "modified": 1519102521
 }
