@@ -15,9 +15,10 @@ function the_columns($context = 'section', $cols_cb_i = null)
         if ($context == 'hero_unit') {
             $cols = get_field($context . '_columns');
             // this seems unecessary ** check how ACF clone is rendering different in Hero Unit
-            $alignment_array = get_field('hero_unit_column_alignment');
-            if ($alignment_array['column_alignment'] != 'top') {
-                $y_alignment = ' align-' . $alignment_array['column_alignment'];
+						$alignment_array = get_field('hero_unit_column_alignment');
+				
+            if ($alignment_array['y_alignment'] != 'top') {
+                $y_alignment = ' align-' . $alignment_array['y_alignment'];
             }
             $x_alignment = ' align-center';
 
