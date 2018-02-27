@@ -1,5 +1,5 @@
 .site-header {
-  @include responsive-padding("vert", $base-margin);
+  padding: $component-margin*0.75 0;
   .row {
     width: 100%;
   }
@@ -11,6 +11,15 @@
   .menu li.current_page_parent a,
   .menu li.current_page_item a {
     color: $menu-item-color-active;
+  }
+  @include breakpoint(medium) {
+    align-items: center;
+    display: flex;
+    height: rem-calc(100);
+    padding: 0;
+    .grid-container {
+      width: 100%;
+    }
   }
 }
 

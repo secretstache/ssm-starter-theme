@@ -432,17 +432,34 @@ function get_inline_styles($context = 'section')
 
 }
 
-function the_video_background() {
+function the_video_background($context = 'section') {
 	
-	if ( ssm_get_field('background_options') == 'Video' && ssm_get_field('background_video') != null ) {
+	$html = '';
 
-		$video = ssm_get_field('background_video');
+	if ( $context == 'hero_unit' ) {
+		if ( get_field('background_options') == 'Video' && get_field('background_video') != null ) {
+			$video = get_field('background_video');
+			$html = '<div class="hero-video">';
+			$html .= '<video autoplay loop>';
+			$html .= '<source src="' . $video['url'] . '" type="video/mp4">';
+			$html .= '</video>';
+			$html .= '</div>';
+			$html .= '<div class="overlay"></div>';
+		}
+	} else {
+		if ( get_sub_field('background_options') == 'Video' && get_sub_field('background_video') != null ) {
+			$video = get_fsub_ield('background_video');
+			$html = '<div class="hero-video">';
+			$html .= '<video autoplay loop>';
+			$html .= '<source src="' . $video['url'] . '" type="video/mp4">';
+			$html .= '</video>';
+			$html .= '</div>';
+			$html .= '<div class="overlay"></div>';
+		}
+	}
 
-		$html = '<video class="hero-video" autoplay loop>';
-		$html .= '<source src="' . $video['url'] . '" type="video/mp4">';
-		$html .= '</video>';
-		$html .= '<div class="overlay"></div>';
-
+	if ( get_field('background_options') == 'Video' && get_field('background_video') != null || get_sub_field('background_options') == 'Video' && get_sub_field('background_video') != null ) {
+		
 	}
 
 	echo $html;
