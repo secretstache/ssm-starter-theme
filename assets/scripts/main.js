@@ -66,7 +66,9 @@
           );
         });
 
-        var $hashLinks = new Foundation.SmoothScroll($('a[href*="#"]'));
+        if ($('a[href*="#"]').length) {
+          new Foundation.SmoothScroll($('a[href*="#"]'));
+        }
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
