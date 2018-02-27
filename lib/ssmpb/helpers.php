@@ -13,18 +13,20 @@ function the_columns($context = 'section', $cols_cb_i = null)
         $alignment = '';
 
         if ($context == 'hero_unit') {
-						$cols = get_field($context . '_columns');
-						// this seems unecessary ** check how ACF clone is rendering different in Hero Unit
+            $cols = get_field($context . '_columns');
+            // this seems unecessary ** check how ACF clone is rendering different in Hero Unit
             $alignment_array = get_field('hero_unit_column_alignment');
             if ($alignment_array['column_alignment'] != 'top') {
-                $alignment = ' align-' . $alignment_array['column_alignment'];
-						}
+                $y_alignment = ' align-' . $alignment_array['column_alignment'];
+            }
+            $x_alignment = ' align-center';
 
         } elseif ($context == 'section') {
             $cols = get_sub_field($context . '_columns');
-            if (get_sub_field('column_alignment') != 'top') {
-                $alignment = ' align-' . get_sub_field('column_alignment');
+            if (get_sub_field('y_alignment') != 'top') {
+                $y_alignment = ' align-' . get_sub_field('y_alignment');
             }
+            $x_alignment = ' align-' . get_sub_field('x_alignment');
         }
 
         $count = count($cols);
@@ -41,7 +43,7 @@ function the_columns($context = 'section', $cols_cb_i = null)
         if (have_rows($context . '_columns')) {
 
             echo '<div class="grid-container">';
-            echo '<div class="main grid-x grid-margin-x align-center' . $alignment . ' has-' . $count . '-cols">';
+            echo '<div class="main grid-x grid-margin-x' . $x_alignment . $y_alignment . ' has-' . $count . '-cols">';
             while (have_rows($context . '_columns')) {
                 the_row();
 
@@ -408,17 +410,25 @@ function ssmpb_notices()
     }
 }
 
-function get_inline_styles() {
+function get_inline_styles($context = 'section')
+{
 
-	$image = '';
-	$style = '';
+    $image = '';
+    $style = '';
 
-	if ( get_sub_field('background_options') == 'Image' && get_sub_field('background_image') != NULL ) {
-		$image = get_sub_field('background_image');
-		$style = ' style="background-image: url(' . $image['url'] . ')"';
-	}
+    if ($context == 'hero_unit') {
+        if (get_field('background_options') == 'Image' && get_field('background_image') != null) {
+            $image = get_field('background_image');
+            $style = ' style="background-image: url(' . $image['url'] . ')"';
+        }
+    } else {
+        if (get_sub_field('background_options') == 'Image' && get_sub_field('background_image') != null) {
+            $image = get_sub_field('background_image');
+            $style = ' style="background-image: url(' . $image['url'] . ')"';
+        }
+    }
 
-	return $style;
+    return $style;
 
 }
 

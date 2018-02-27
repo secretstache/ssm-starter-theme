@@ -7,7 +7,7 @@ h5 {
 }
 
 p.intro {
-  @include responsive-type(20);
+  @include responsive-type($default-font-size * 1.25);
 }
 
 p:last-of-type {

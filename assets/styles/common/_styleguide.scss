@@ -15,6 +15,7 @@ $gutter-medium: map-get($grid-column-gutter, medium);
 $primary-font-family: $body-font-family; // from F6 settings
 $primary-font-color: $black; // from F6 settings
 $reverse-font-color: $white; // from F6 settings
+$default-font-size: rem-calc(18);
 
 // Off Canvas Menu
 $panel-width: 300px !default;

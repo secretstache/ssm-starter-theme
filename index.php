@@ -2,7 +2,7 @@
 
 <section class="content-block">
   <div class="grid-container"> 
-    <div class="grid-x grid-x-margin align-center">
+    <div class="grid-x grid-margin-x align-center">
       
     <?php if ( have_posts() ) { ?>
       

@@ -3,13 +3,14 @@
   .row {
     width: 100%;
   }
-  p.site-title {
-    margin-bottom: 0;
-  }
   .brand {
     @include breakpoint(small only) {
       max-width: rem-calc(100);
     }
+  }
+  .menu li.current_page_parent a,
+  .menu li.current_page_item a {
+    color: $menu-item-color-active;
   }
 }
 
