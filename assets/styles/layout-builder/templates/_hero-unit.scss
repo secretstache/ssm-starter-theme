@@ -2,6 +2,9 @@ section.hero-unit {
   @include responsive-padding("vert", $base-padding);
   position: relative;
   overflow: hidden;
+  .grid-container {
+    width: 100%;
+  }
   .grid-x {
     position: relative;
     z-index: 10;

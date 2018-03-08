@@ -27,7 +27,7 @@ if ( strpos( $iframe, 'vimeo' ) !== false ) {
     'rel'             => 0,
     'showinfo'        => 0,
     'modestbranding'  => 1,
-    'vq'              => 'highres',
+		'vq'              => 'highres',
   );
 
   $c_classes[] = 'youtube';
