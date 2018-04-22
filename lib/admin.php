@@ -29,9 +29,9 @@ function remove_dashboard_meta() {
 }
 
 // Remove default welcome panel
-remove_action( 'welcome_panel', 'wp_welcome_panel' );
+// remove_action( 'welcome_panel', 'wp_welcome_panel' );
 
-add_action( 'welcome_panel', 'ssm_welcome_panel' );
+// add_action( 'welcome_panel', 'ssm_welcome_panel' );
 /**
  * Create Custom Welcome Panel
  */

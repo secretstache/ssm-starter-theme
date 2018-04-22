@@ -1,9 +1,10 @@
 .site-header {
-  padding: $component-margin*0.75 0;
-  .row {
+  padding: $component-margin * 0.75 0;
+  .grid-x {
     width: 100%;
   }
   .brand {
+    width: rem-calc(150);
     @include breakpoint(small only) {
       max-width: rem-calc(100);
     }

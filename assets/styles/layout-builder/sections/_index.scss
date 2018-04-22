@@ -13,30 +13,17 @@ section[class*="bg-"] {
   }
 }
 
-section:first-of-type[class^="bg-"],
-section:first-of-type[class*="bg-"] {
-  margin-top: 0;
-}
-
 section[class^="bg-"] + section[class^="bg-"],
 section[class*="bg-"] + section[class*="bg-"] {
-  padding-top: 0;
   margin-top: 0;
 }
 
-section.multiple + section.multiple {
-  @include responsive-margin("top");
-}
-
-section.content-block:last-of-type,
-section.content-block:last-of-type.multiple {
+section.content-block:last-of-type {
   @include responsive-margin("bottom");
 }
 
 section:last-of-type[class^="bg-"],
-section:last-of-type[class*="bg-"],
-.home section:last-of-type[class^="bg-"],
-.home section:last-of-type[class*="bg-"] {
+section:last-of-type[class*="bg-"] {
   margin-bottom: 0;
 }
 
@@ -48,12 +35,10 @@ section.bg-image {
 
 section.bg-dark {
   color: $white;
-
   input,
   textarea {
     color: $white;
   }
-
   .button {
     color: $white;
   }
@@ -112,11 +97,7 @@ section.content-block:last-of-type.collapse-vert {
 
 section.content-block[class^="bg-"].push-vert,
 section.content-block[class*="bg-"].push-vert {
-  @include responsive-padding("vert", $base-padding*2);
-}
-
-section.wide .grid-x {
-  max-width: 100%;
+  @include responsive-padding("vert", $base-padding * 2);
 }
 
 section.collapse .grid-x .cell {

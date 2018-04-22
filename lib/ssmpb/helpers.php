@@ -1,11 +1,13 @@
 <?php
 
-function the_columns($context = 'section', $cols_cb_i = null)
+function the_columns($context = 'section', $tpl_args)
 {
+		global $post;
+		global $tpl_args;
+
+		$cols_cb_i = $tpl_args['cols_cb_i'];
 
     if (FIELD_LIBRARY == 'ACF') {
-
-        global $post;
 
         $page_id = $post->ID;
 
@@ -58,7 +60,7 @@ function the_columns($context = 'section', $cols_cb_i = null)
                     }
                 }
 
-                $template_args['column_width'] = $width;
+                $tpl_args['column_width'] = $width;
 
                 echo '<div class="cell small-11 medium-' . $width . ' i-' . get_row_index() . '">';
 

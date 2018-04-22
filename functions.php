@@ -1,7 +1,7 @@
 <?php
 
 // Automatically load composer packages
-require_once( 'vendor/autoload.php' );
+// require_once( 'vendor/autoload.php' );
 
 /**
  * Sage includes

@@ -50,24 +50,32 @@ img[class^="wp-image-"] {
 }
 
 @include breakpoint(medium) {
-  section[class^="thin-"] .main.row,
-  [class*="thin-"] .main.row {
+  section[class^="thin-"] .main.grid-x,
+  [class*="thin-"] .main.grid-x {
     margin-left: auto;
     margin-right: auto;
   }
-  section.thin-90 .main.row {
+  section.thin-90 .main.grid-x {
     width: 90%;
   }
-  section.thin-80 .main.row {
+  section.thin-80 .main.grid-x {
     width: 80%;
   }
-  section.thin-70 .main.row {
+  section.thin-70 .main.grid-x {
     width: 70%;
   }
-  section.thin-60 .main.row {
+  section.thin-60 .main.grid-x {
     width: 60%;
   }
-  section.thin-50 .main.row {
+  section.thin-50 .main.grid-x {
     width: 50%;
+  }
+}
+
+@include breakpoint(small only) {
+  .grid-margin-x.align-left,
+  .grid-margin-x.align-justify,
+  .grid-margin-x.align-right {
+    justify-content: center;
   }
 }

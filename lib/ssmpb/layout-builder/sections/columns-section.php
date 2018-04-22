@@ -7,7 +7,7 @@ if (get_sub_field('status') == 0) {
 
 global $tpl_args;
 
-$cols_cb_i = $tpl_args['cols_cb_i'];
+// $cols_cb_i = $tpl_args['cols_cb_i'];
 
 $style = get_inline_styles();
 
