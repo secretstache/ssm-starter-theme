@@ -2,6 +2,8 @@
 
 if ( !post_password_required() ) {
 
+	global $tpl_args;
+
 	$style = get_inline_styles( 'hero_unit' );
 	$cols = ssm_get_field( 'hero_unit_columns' );
 
@@ -10,7 +12,7 @@ if ( !post_password_required() ) {
 	echo '<section' . hero_unit_id_classes() . $style . '>';
 
 		the_video_background( 'hero_unit' );
-		the_columns( 'hero_unit' );
+		the_columns( 'hero_unit', $tpl_args );
 
 	echo '</section>';
 
