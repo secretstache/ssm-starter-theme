@@ -393,6 +393,21 @@ function do_inline_css() {
 
 }
 
+add_action('wp_footer', 'do_inline_js', 99);
+/**
+ * Injects inline JS into the footer
+ * @since 1.0.0
+ */
+function do_inline_js() {
+
+  global $post;
+
+  if ( $page_script = get_field('page_inline_scripts') ) {
+    echo '<script type="text/javascript" id="inline-js">' . $page_script . '</script>';
+  }
+
+}
+
 add_action('admin_notices', 'ssmpb_notices');
 /**
  * Conditionally shows message if URL contains ssmpb=save_reminder
