@@ -159,24 +159,24 @@ function pprint_r( $q ) {
 /**
  * Control the number of words returned
  */
-function limit_words($string, $word_limit) {
+function limit_words($string, $word_limit, $ellipses = true) {
     
-  $word_limit = (int) $word_limit;
-
-  $string = preg_replace("/<img[^>]+\>/i", '', $string); 		
-  $string = preg_replace("/<iframe[^>]+\>/i", '', $string);
+    $word_limit = (int) $word_limit;
   
-  $string = strip_shortcodes( $string );
-
-  $words = explode(' ', $string);
-
-  if ( count($words) >= $word_limit ) {
-    $excerpt = implode(' ', array_slice($words, 0, $word_limit));
-    $excerpt = $excerpt . ' <span class="elipses">...</span>';
-  } else {
-    $excerpt = implode(' ', $words);
-  }
-
-  return $excerpt;
+    $string = preg_replace("/<img[^>]+\>/i", '', $string); 		
+    $string = preg_replace("/<iframe[^>]+\>/i", '', $string);
+    
+    $string = strip_shortcodes( $string );
   
+    $words = explode(' ', $string);
+  
+    if ( count($words) >= $word_limit ) {
+      $excerpt = implode(' ', array_slice($words, 0, $word_limit));
+      $excerpt .= ( $ellipses ) ? '<span class="elipses">...</span>' : '...';
+    } else {
+      $excerpt = implode(' ', $words);
+    }
+  
+    return $excerpt;
+    
 }
