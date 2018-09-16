@@ -3,27 +3,20 @@
   "version": "master",  
   "type": "wordpress-theme",
   "license": "MIT",
-  "description": "The best WordPress starter theme with a modern front-end development workflow. Based on HTML5 Boilerplate, gulp, Bower, and Bootstrap.",
-  "homepage": "https://roots.io/sage/",
+  "description": "SSM Starter Theme built on top of Sage/Roots Starter Theme",
+  "homepage": "https://github.com/secretstache/ssm-starter-theme",
   "authors": [
     {
-      "name": "Ben Word",
-      "email": "ben@benword.com",
-      "homepage": "https://github.com/retlehs"
+      "name": "Rich Staats",
+      "email": "rich@secretstache.com",
+      "homepage": "https://www.secretstache.com/"
     },
     {
-      "name": "Scott Walkinshaw",
-      "email": "scott.walkinshaw@gmail.com",
-      "homepage": "https://github.com/swalkinshaw"
+      "name": "Alexander Smulsky",
+      "email": "alex@secretstache.com",
+      "homepage": "https://www.secretstache.com/"
     }
   ],
-  "keywords": [
-    "wordpress"
-  ],
-  "support": {
-    "issues": "https://github.com/roots/sage/issues",
-    "forum": "https://discourse.roots.io/"
-  },
   "require": {
     "php": ">=5.4.0",
     "composer/installers": "~1.0",
