@@ -1,5 +1,6 @@
 {
   "name": "roots/sage",
+  "version": "master",  
   "type": "wordpress-theme",
   "license": "MIT",
   "description": "The best WordPress starter theme with a modern front-end development workflow. Based on HTML5 Boilerplate, gulp, Bower, and Bootstrap.",
@@ -28,5 +29,9 @@
     "composer/installers": "~1.0",
     "htmlburger/carbon-fields": "^2.1",
     "nesbot/carbon": "^1.22"
+  },
+  "dist": {
+    "url": "git@github.com:secretstache/ssm-starter-theme.git",
+    "type": "git"
   }
 }
